@@ -5,8 +5,8 @@ class Application
     req = Rack::Request.new(env)
 
     if req.path.match=="/items/"
-      item_title = req.path.split("/songs/").last #turn /songs/Sorry into Sorry
-      song = @@songs.find{|s| s.title == song_title}
+      item_title = req.path.split("/items/").last #turn /songs/Sorry into Sorry
+      item = @@items.find{|s| s.title == item_title}
 
       resp.write song.artist
     else
