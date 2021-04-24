@@ -8,7 +8,7 @@ class Application
       item_name = req.path.split("/items/").last #turn /songs/Sorry into Sorry
       item = @@items.find{|s| s.name == item_name}
 
-      resp.write item.cost
+      resp.write item.price
     else
       resp.write "Item not found"
       resp.status = 404
